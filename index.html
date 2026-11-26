@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Muhamad Irfangi - Mahasiswa Universitas Komputama</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        // Konfigurasi Tailwind untuk Font Inter & Dark Mode
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased transition-colors duration-300 selection:bg-primary-600 selection:text-white">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo / Brand -->
+                <a href="#" class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-lg bg-primary-600 text-white flex items-center justify-center text-sm font-bold shadow-md shadow-primary-600/30">MI</span>
+                    <span>Muhamad<span class="text-primary-600">.</span></span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#tentang" class="text-sm font-medium text-slate-600 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-400 transition-colors">Tentang Saya</a>
+                    <a href="#keahlian" class="text-sm font-medium text-slate-600 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-400 transition-colors">Keahlian</a>
+                    <a href="#proyek" class="text-sm font-medium text-slate-600 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-400 transition-colors">Proyek Kuliah</a>
+                    <a href="#pendidikan" class="text-sm font-medium text-slate-600 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-400 transition-colors">Pendidikan</a>
+                    <a href="#kontak" class="px-4 py-2 text-sm font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-xl shadow-sm transition-all">Hubungi Saya</a>
+                </nav>
+
+                <!-- Theme Toggle & Mobile Menu Button -->
+                <div class="flex items-center gap-2">
+                    <button id="theme-toggle" aria-label="Ganti Tema" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                        <i id="theme-icon" class="fas fa-moon text-sm"></i>
+                    </button>
+                    <button id="mobile-menu-btn" aria-label="Menu Utama" class="md:hidden p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                        <i class="fas fa-bars text-base"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 pt-2 pb-4 space-y-1 shadow-lg">
+            <a href="#tentang" class="mobile-link block px-3 py-2.5 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Tentang Saya</a>
+            <a href="#keahlian" class="mobile-link block px-3 py-2.5 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Keahlian</a>
+            <a href="#proyek" class="mobile-link block px-3 py-2.5 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Proyek Kuliah</a>
+            <a href="#pendidikan" class="mobile-link block px-3 py-2.5 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Pendidikan</a>
+            <a href="#kontak" class="mobile-link block px-3 py-2.5 mt-2 text-center rounded-xl text-base font-semibold text-white bg-primary-600 hover:bg-primary-700">Hubungi Saya</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden py-20 lg:py-28">
+            <!-- Dekorasi Latar Belakang -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-64 bg-primary-500/10 dark:bg-primary-500/5 blur-3xl rounded-full pointer-events-none"></div>
+
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
+                    <!-- Teks Pengantar -->
+                    <div class="flex-1 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-50 dark:bg-primary-900/30 border border-primary-200 dark:border-primary-800 text-primary-700 dark:text-primary-300 text-xs sm:text-sm font-semibold mb-6">
+                            <span class="w-2 h-2 rounded-full bg-primary-600 animate-pulse"></span>
+                            Mahasiswa Semester 3 • Universitas Komputama Majenang
+                        </div>
+                        
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight mb-6">
+                            Halo, Saya <br class="hidden sm:block" />
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-indigo-500">Muhamad Irfangi</span>
+                        </h1>
+                        
+                        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
+                            Mahasiswa aktif yang bersemangat mendalami dunia teknologi informasi, pengembangan perangkat lunak, dan pemecahan masalah digital. Terus belajar dan membangun karya nyata di bangku perkuliahan.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="#proyek" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white font-semibold shadow-lg shadow-primary-600/25 transition-all flex items-center justify-center gap-2">
+                                <span>Lihat Proyek Saya</span>
+                                <i class="fas fa-arrow-right text-sm"></i>
+                            </a>
+                            <a href="#kontak" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold border border-slate-200 dark:border-slate-700 transition-all flex items-center justify-center gap-2">
+                                <i class="fas fa-paper-plane text-primary-600"></i>
+                                <span>Mari Terhubung</span>
+                            </a>
+                        </div>
+
+                        <!-- Sosial Media Cepat -->
+                        <div class="mt-10 flex items-center justify-center lg:justify-start gap-4 text-slate-500 dark:text-slate-400">
+                            <span class="text-xs font-medium uppercase tracking-wider">Temukan saya di:</span>
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:text-primary-600 hover:border-primary-600 transition-colors">
+                                <i class="fab fa-github text-lg"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:text-primary-600 hover:border-primary-600 transition-colors">
+                                <i class="fab fa-linkedin-in text-lg"></i>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:text-primary-600 hover:border-primary-600 transition-colors">
+                                <i class="fab fa-instagram text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Foto Profil / Avatar Card -->
+                    <div class="w-64 sm:w-72 lg:w-80 flex-shrink-0">
+                        <div class="relative group">
+                            <div class="absolute -inset-1 bg-gradient-to-tr from-primary-600 to-indigo-500 rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
+                            <div class="relative bg-white dark:bg-slate-900 p-3 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl">
+                                <img 
+                                    src="https://placehold.co/400x400/2563eb/ffffff?text=Muhamad+Irfangi" 
+                                    onerror="this.src='https://placehold.co/400x400/1e293b/ffffff?text=MI'"
+                                    alt="Foto Profil Muhamad Irfangi" 
+                                    class="w-full h-auto aspect-square object-cover rounded-2xl"
+                                >
+                                <div class="mt-3 px-2 py-1.5 flex items-center justify-between text-xs">
+                                    <span class="font-semibold text-slate-700 dark:text-slate-300">Status Akademik</span>
+                                    <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-bold">Semester 3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tentang Saya Section -->
+        <section id="tentang" class="py-16 sm:py-20 bg-white dark:bg-slate-900/50 border-y border-slate-200/80 dark:border-slate-800/80">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center mb-12">
+                    <h2 class="text-sm font-bold uppercase tracking-widest text-primary-600 mb-2">Profil Singkat</h2>
+                    <h3 class="text-3xl font-extrabold text-slate-900 dark:text-white">Tentang Saya</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                    <div class="md:col-span-2 space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-base">
+                        <p>
+                            Perkenalkan, nama saya <strong class="text-slate-900 dark:text-white">Muhamad Irfangi</strong>. Saat ini saya sedang menempuh pendidikan tinggi di <strong class="text-primary-600 dark:text-primary-400">Universitas Komputama Majenang</strong> dan berada di <strong class="text-slate-900 dark:text-white">Semester 3</strong>.
+                        </p>
+                        <p>
+                            Selama tiga semester perjalanan kuliah saya, saya telah mempelajari fondasi penting dalam ilmu komputer mulai dari algoritma & pemrograman dasar, struktur data, basis data, hingga pengembangan web modern. Saya senang mengubah ide-ide sederhana menjadi aplikasi fungsional yang bermanfaat.
+                        </p>
+                        <p>
+                            Di luar jam perkuliahan, saya aktif mengeksplorasi teknologi baru, mengerjakan proyek mandiri, serta terbuka untuk kolaborasi tim maupun kesempatan magang yang dapat mengasah kemampuan teknis dan profesional saya.
+                        </p>
+                    </div>
+
+                    <!-- Kartu Statistik Mahasiswa -->
+                    <div class="grid grid-cols-2 md:grid-cols-1 gap-4">
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
+                            <div class="text-primary-600 text-2xl mb-1"><i class="fas fa-university"></i></div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">Kampus</div>
+                            <div class="text-sm font-bold text-slate-900 dark:text-white mt-0.5">Universitas Komputama Majenang</div>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
+                            <div class="text-indigo-500 text-2xl mb-1"><i class="fas fa-layer-group"></i></div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">Tingkat Saat Ini</div>
+                            <div class="text-sm font-bold text-slate-900 dark:text-white mt-0.5">Mahasiswa Semester 3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Keahlian / Skills Section -->
+        <section id="keahlian" class="py-16 sm:py-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center mb-12">
+                    <h2 class="text-sm font-bold uppercase tracking-widest text-primary-600 mb-2">Kompetensi</h2>
+                    <h3 class="text-3xl font-extrabold text-slate-900 dark:text-white">Keahlian & Teknologi</h3>
+                    <p class="mt-3 text-slate-600 dark:text-slate-400 text-sm sm:text-base">Keterampilan teknis yang telah saya pelajari selama perkuliahan hingga semester 3 dan eksplorasi mandiri.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Skill Card 1 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Pengembangan Web</h4>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Membangun antarmuka web yang responsif dan interaktif.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">HTML5</span>
+                            <span class="px-3 py-1 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">CSS3 / Tailwind</span>
+                            <span class="px-3 py-1 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">JavaScript</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 2 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-terminal"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Pemrograman & Logika</h4>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Pemahaman algoritma, struktur data, dan pemrograman berorientasi objek.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Python</span>
+                            <span class="px-3 py-1 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Java / C++</span>
+                            <span class="px-3 py-1 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Struktur Data</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 3 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Basis Data & Tools</h4>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Perancangan relasi database dan manajemen kode sumber.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">MySQL</span>
+                            <span class="px-3 py-1 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Git & GitHub</span>
+                            <span class="px-3 py-1 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Figma Dasar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proyek Kuliah & Mandiri Section -->
+        <section id="proyek" class="py-16 sm:py-20 bg-white dark:bg-slate-900/50 border-y border-slate-200/80 dark:border-slate-800/80">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
+                    <div>
+                        <h2 class="text-sm font-bold uppercase tracking-widest text-primary-600 mb-2">Portofolio Karya</h2>
+                        <h3 class="text-3xl font-extrabold text-slate-900 dark:text-white">Proyek Kuliah & Latihan</h3>
+                    </div>
+                    <!-- Filter Kategori Proyek -->
+                    <div class="flex flex-wrap gap-2" id="project-filters">
+                        <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs font-semibold bg-primary-600 text-white transition-colors">Semua</button>
+                        <button data-filter="web" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">Web App</button>
+                        <button data-filter="akademik" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">Tugas Kuliah</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="project-grid">
+                    <!-- Proyek 1 -->
+                    <article data-category="web" class="project-card group rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:shadow-lg">
+                        <div class="relative overflow-hidden aspect-video bg-slate-200 dark:bg-slate-800">
+                            <img 
+                                src="https://placehold.co/600x360/1e40af/ffffff?text=Sistem+Informasi+Kas+Kelas" 
+                                onerror="this.src='https://placehold.co/600x360/334155/ffffff?text=Proyek+Web'"
+                                alt="Sistem Informasi Kas Kelas" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            >
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-slate-900/75 backdrop-blur-sm text-white text-xs font-medium">Semester 3</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Aplikasi Pencatatan Kas Mahasiswa</h4>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 flex-1">
+                                Aplikasi berbasis web sederhana untuk mencatat pemasukan, pengeluaran, dan laporan keuangan kelas secara transparan.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                <span class="px-2.5 py-0.5 text-xs rounded-md bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 font-medium">HTML/Tailwind</span>
+                                <span class="px-2.5 py-0.5 text-xs rounded-md bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 font-medium">JavaScript</span>
+                            </div>
+                            <button onclick="openModal('Aplikasi Pencatatan Kas Mahasiswa', 'Proyek ini dibuat pada Semester 3 untuk mempermudah bendahara kelas dalam merekap iuran mingguan mahasiswa. Fitur mencakup tambah transaksi, filter bulan, dan ringkasan saldo otomatis.')" class="w-full py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm font-semibold text-slate-800 dark:text-slate-200 hover:border-primary-600 hover:text-primary-600 transition-colors">
+                                Detail Proyek
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Proyek 2 -->
+                    <article data-category="akademik" class="project-card group rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:shadow-lg">
+                        <div class="relative overflow-hidden aspect-video bg-slate-200 dark:bg-slate-800">
+                            <img 
+                                src="https://placehold.co/600x360/0f766e/ffffff?text=Database+Perpustakaan" 
+                                onerror="this.src='https://placehold.co/600x360/334155/ffffff?text=Proyek+Database'"
+                                alt="Perancangan Basis Data Perpustakaan" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            >
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-slate-900/75 backdrop-blur-sm text-white text-xs font-medium">Tugas Kuliah</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Sistem Basis Data Perpustakaan</h4>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 flex-1">
+                                Perancangan Entity Relationship Diagram (ERD), normalisasi tabel, dan implementasi query SQL untuk manajemen peminjaman buku.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                <span class="px-2.5 py-0.5 text-xs rounded-md bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 font-medium">MySQL</span>
+                                <span class="px-2.5 py-0.5 text-xs rounded-md bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 font-medium">ERD Design</span>
+                            </div>
+                            <button onclick="openModal('Sistem Basis Data Perpustakaan', 'Tugas mata kuliah Sistem Basis Data di Universitas Komputama. Mencakup pembuatan skema relasional hingga normalisasi bentuk ketiga (3NF) serta query laporan keterlambatan pengembalian buku.')" class="w-full py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm font-semibold text-slate-800 dark:text-slate-200 hover:border-primary-600 hover:text-primary-600 transition-colors">
+                                Detail Proyek
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Proyek 3 -->
+                    <article data-category="web" class="project-card group rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:shadow-lg">
+                        <div class="relative overflow-hidden aspect-video bg-slate-200 dark:bg-slate-800">
+                            <img 
+                                src="https://placehold.co/600x360/4338ca/ffffff?text=Kalkulator+IPK+Mahasiswa" 
+                                onerror="this.src='https://placehold.co/600x360/334155/ffffff?text=Proyek+App'"
+                                alt="Kalkulator IPK Mahasiswa" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            >
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-slate-900/75 backdrop-blur-sm text-white text-xs font-medium">Proyek Mandiri</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Simulasi & Kalkulator IPK</h4>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 flex-1">
+                                Alat bantu interaktif bagi mahasiswa untuk menghitung Indeks Prestasi Semester (IPS) dan simulasi target IPK kumulatif.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                <span class="px-2.5 py-0.5 text-xs rounded-md bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 font-medium">JavaScript</span>
+                                <span class="px-2.5 py-0.5 text-xs rounded-md bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 font-medium">Responsive UI</span>
+                            </div>
+                            <button onclick="openModal('Simulasi & Kalkulator IPK', 'Aplikasi mandiri yang membantu teman-teman mahasiswa menghitung nilai mutu berdasarkan bobot SKS mata kuliah secara cepat dan akurat di perangkat mobile maupun desktop.')" class="w-full py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm font-semibold text-slate-800 dark:text-slate-200 hover:border-primary-600 hover:text-primary-600 transition-colors">
+                                Detail Proyek
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Riwayat Pendidikan Section -->
+        <section id="pendidikan" class="py-16 sm:py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-sm font-bold uppercase tracking-widest text-primary-600 mb-2">Latar Belakang</h2>
+                    <h3 class="text-3xl font-extrabold text-slate-900 dark:text-white">Riwayat Pendidikan</h3>
+                </div>
+
+                <div class="relative border-l-2 border-primary-600/30 ml-4 sm:ml-6 space-y-10">
+                    <!-- Item 1 -->
+                    <div class="relative pl-8">
+                        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-primary-600 ring-4 ring-primary-100 dark:ring-primary-900/50"></span>
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <span class="px-3 py-1 rounded-full bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-xs font-bold">2025 – Sekarang (Semester 3)</span>
+                                <span class="text-xs font-medium text-slate-500 dark:text-slate-400"><i class="fas fa-map-marker-alt mr-1"></i> Majenang, Cilacap</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 dark:text-white">Universitas Komputama Majenang</h4>
+                            <p class="text-sm font-medium text-primary-600 dark:text-primary-400 mt-1">Mahasiswa Aktif</p>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+                                Fokus mempelajari ilmu komputer, rekayasa perangkat lunak, jaringan dasar, dan manajemen sistem informasi. Aktif mengikuti kegiatan diskusi akademik dan praktikum laboratorium komputer.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="relative pl-8">
+                        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-600 ring-4 ring-slate-100 dark:ring-slate-800"></span>
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold">Lulus</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-slate-900 dark:text-white">Pendidikan Menengah Atas (SMA/SMK)</h4>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+                                Menyelesaikan pendidikan menengah dan mulai membangun ketertarikan mendalam pada bidang komputer serta teknologi digital sebelum melanjutkan ke perguruan tinggi.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kontak Section -->
+        <section id="kontak" class="py-16 sm:py-20 bg-white dark:bg-slate-900/50 border-t border-slate-200/80 dark:border-slate-800/80">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-sm font-bold uppercase tracking-widest text-primary-600 mb-2">Kontak</h2>
+                    <h3 class="text-3xl font-extrabold text-slate-900 dark:text-white">Hubungi Muhamad Irfangi</h3>
+                    <p class="mt-3 text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
+                        Ingin berdiskusi seputar proyek kuliah, kolaborasi pemrograman, atau sekadar menyapa? Silakan kirim pesan melalui formulir di bawah ini.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                    <!-- Info Kontak -->
+                    <div class="lg:col-span-2 space-y-4">
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-primary-100 dark:bg-primary-900/40 text-primary-600 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="overflow-hidden">
+                                <h4 class="text-sm font-bold text-slate-900 dark:text-white">Email</h4>
+                                <p id="email-text" class="text-sm text-slate-600 dark:text-slate-400 truncate mt-0.5">muhamad.irfangi@student.komputama.ac.id</p>
+                                <button onclick="copyEmail()" class="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold text-primary-600 hover:text-primary-700">
+                                    <i class="far fa-copy"></i> Salin Email
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-primary-100 dark:bg-primary-900/40 text-primary-600 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900 dark:text-white">Lokasi Kampus</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-400 mt-0.5">Universitas Komputama Majenang, Cilacap, Jawa Tengah</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Pesan -->
+                    <form id="contact-form" class="lg:col-span-3 p-6 sm:p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="nama" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Nama Lengkap</label>
+                                <input type="text" id="nama" required placeholder="Masukkan nama Anda" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-primary-600">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Alamat Email</label>
+                                <input type="email" id="email" required placeholder="nama@email.com" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-primary-600">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="pesan" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Pesan</label>
+                            <textarea id="pesan" rows="4" required placeholder="Tuliskan pesan Anda untuk Muhamad Irfangi..." class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-primary-600"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white font-semibold text-sm shadow-md shadow-primary-600/20 transition-all">
+                            Kirim Pesan Sekarang
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-slate-200 dark:border-slate-800 text-center text-sm text-slate-500 dark:text-slate-400">
+        <div class="max-w-6xl mx-auto px-4">
+            <p class="font-medium text-slate-700 dark:text-slate-300">Muhamad Irfangi</p>
+            <p class="text-xs mt-1">Mahasiswa Semester 3 • Universitas Komputama Majenang</p>
+            <p class="text-xs mt-4">&copy; 2026 Muhamad Irfangi. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- Modal Detail Proyek -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-md w-full p-6 shadow-2xl transform transition-all">
+            <div class="flex items-center justify-between mb-4">
+                <h3 id="modal-title" class="text-lg font-bold text-slate-900 dark:text-white">Judul Proyek</h3>
+                <button onclick="closeModal()" class="p-2 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <p id="modal-desc" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                Deskripsi proyek akan muncul di sini.
+            </p>
+            <div class="flex justify-end">
+                <button onclick="closeModal()" class="px-5 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold transition-colors">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Notification Toast (Pengganti alert) -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 hidden items-center gap-3 px-4 py-3 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-medium shadow-xl">
+        <i class="fas fa-check-circle text-emerald-400 dark:text-emerald-600"></i>
+        <span id="toast-message">Notifikasi</span>
+    </div>
+
+    <!-- JavaScript Interaktif -->
+    <script>
+        // 1. Pengaturan Dark / Light Mode
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlEl = document.documentElement;
+
+        // Cek preferensi sistem atau localStorage
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlEl.classList.add('dark');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            htmlEl.classList.toggle('dark');
+            if (htmlEl.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
+
+        // 2. Toggle Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 3. Filter Proyek
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Reset style tombol aktif
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-primary-600', 'text-white');
+                    b.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+                });
+                
+                // Set style tombol yang diklik
+                btn.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+                btn.classList.add('bg-primary-600', 'text-white');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // 4. Modal Detail Proyek
+        const modal = document.getElementById('project-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDesc = document.getElementById('modal-desc');
+
+        function openModal(title, desc) {
+            modalTitle.textContent = title;
+            modalDesc.textContent = desc;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Tutup modal jika klik di luar kotak modal
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // 5. Notifikasi Toast & Salin Email
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = msg;
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+
+            setTimeout(() => {
+                toast.classList.add('hidden');
+                toast.classList.remove('flex');
+            }, 3000);
+        }
+
+        function copyEmail() {
+            const emailText = document.getElementById('email-text').textContent;
+            const tempInput = document.createElement('input');
+            tempInput.value = emailText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                document.execCommand('copy');
+                showToast('Alamat email berhasil disalin!');
+            } catch (err) {
+                showToast('Gagal menyalin email.');
+            }
+            document.body.removeChild(tempInput);
+        }
+
+        // 6. Penanganan Form Kontak
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nama = document.getElementById('nama').value;
+            showToast(`Terima kasih ${nama}, pesan Anda telah terkirim!`);
+            this.reset();
+        });
+    </script>
+</body>
+</html>
